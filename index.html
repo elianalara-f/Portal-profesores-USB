@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Docente - USB Cartagena</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo-container">
+      <h2>USB CARTAGENA</h2>
+    </div>
+  </header>
+
+  <main class="auth-container">
+    <!-- Login Form -->
+    <div id="loginCard" class="auth-card">
+      <h3>Iniciar Sesión</h3>
+      <form id="loginForm">
+        <input type="email" id="loginEmail" placeholder="Correo institucional" required>
+        <input type="password" id="loginPassword" placeholder="Contraseña" required>
+        <button type="submit" class="btn-orange" style="width: 100%;">Ingresar</button>
+      </form>
+      <p style="margin-top: 1rem; font-size: 0.9rem;">
+        ¿No tienes cuenta? <a href="#" id="toRegister" style="color: var(--color-primary-orange);">Registrate</a>
+      </p>
+    </div>
+
+    <!-- Register Form -->
+    <div id="registerCard" class="auth-card hidden">
+      <h3>Registro Docente</h3>
+      <form id="registerForm">
+        <input type="text" id="regName" placeholder="Nombre completo" required>
+        <input type="email" id="regEmail" placeholder="Correo institucional" required>
+        <input type="text" id="regFaculty" placeholder="Facultad / Programa" required>
+        <input type="password" id="regPassword" placeholder="Contraseña" required>
+        <button type="submit" class="btn-orange" style="width: 100%;">Registrarme</button>
+      </form>
+      <p style="margin-top: 1rem; font-size: 0.9rem;">
+        ¿Ya tienes cuenta? <a href="#" id="toLogin" style="color: var(--color-primary-orange);">Inicia sesión</a>
+      </p>
+    </div>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

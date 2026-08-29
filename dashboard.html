@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - USB Cartagena</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="logo-container">
+      <h2>USB CARTAGENA</h2>
+    </div>
+    <button class="hamburger" id="hamburgerBtn">&#9776;</button>
+   <nav class="nav-menu" id="navMenu">
+  <ul class="nav-list">
+    <li><a href="#resumen" class="nav-link active">Resumen</a></li>
+    <li><a href="#tabla" class="nav-link">Horario</a></li>
+    <li><a href="#tarjetas" class="nav-link">Asignaturas</a></li>
+    <li><a href="#perfil" class="nav-link">Perfil</a></li>
+  </ul>
+  <button id="logoutBtn" class="btn-logout">Cerrar Sesión</button>
+</nav>
+  </header>
+
+  <main class="dashboard-grid">
+    <!-- Columna Izquierda Principal -->
+    <section class="main-content">
+      <!-- Tarjetas de Métricas -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <h4>Clases Hoy</h4>
+          <p id="classesToday">2</p>
+        </div>
+        <div class="metric-card">
+          <h4>Asignaturas Totales</h4>
+          <p id="totalClasses">3</p>
+        </div>
+      </div>
+
+      <!-- Tabla de Horarios -->
+      <div class="table-container">
+        <h3>Horario Semanal</h3>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Día</th>
+              <th>Hora</th>
+              <th>Asignatura</th>
+              <th>Aula</th>
+            </tr>
+          </thead>
+          <tbody id="scheduleBody"></tbody>
+        </table>
+      </div>
+
+      <!-- Grilla de Asignaturas -->
+      <h3>Asignaturas Asignadas</h3>
+      <div class="courses-grid" id="coursesGrid"></div>
+    </section>
+
+    <!-- Columna Derecha: Panel de Perfil Docente -->
+    <aside class="profile-panel">
+      <h3>Perfil Docente</h3>
+      <hr style="margin: 1rem 0; border: none; border-top: 1px solid var(--color-border);">
+      <p><strong>Nombre:</strong> <span id="profName">-</span></p>
+      <p><strong>Correo:</strong> <span id="profEmail">-</span></p>
+      <p><strong>Facultad:</strong> <span id="profFaculty">-</span></p>
+    </aside>
+  </main>
+
+  <!-- Ventana Modal de Syllabus -->
+  <div id="syllabusModal" class="modal-overlay hidden">
+    <div class="modal-box">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h3 id="modalTitle" style="color: var(--color-primary-orange); margin-bottom: 0.5rem;"></h3>
+      <p style="margin-bottom: 1rem;"><strong>Aula:</strong> <span id="modalRoom"></span></p>
+      <div style="background: var(--color-bg-app); padding: 1rem; border-radius: 4px;">
+        <h4 style="margin-bottom: 0.5rem;">Syllabus del Curso</h4>
+        <p id="modalSyllabusText" style="font-size: 0.95rem; line-height: 1.5;"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

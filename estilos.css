@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Espaciado superior para evitar que la barra fija tape el título al desplazarse */
+section {
+  scroll-margin-top: 80px; 
+}
+
+:root {
+  /* colores USB Cartagena */
+  --color-primary-black: #000000;
+  --color-primary-orange: #FF7D1A;
+  --color-secondary-red: #8B0000;
+
+  /* Fondos y Estructura */
+  --color-bg-app: #FFFBF1;
+  --color-surface: #FFFFFF;
+  --color-border: #BABABA;
+
+  /* Tipografía */
+  --color-text-main: #1A1A1A;
+  --color-text-muted: #666666;
+  --color-text-light: #FFFFFF;
+  --font-main: 'Poppins', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+}
+
+body {
+  background-color: var(--color-bg-app);
+  color: var(--color-text-main);
+  min-height: 100vh;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Header Institucional */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-primary-black);
+  padding: 1rem 2rem;
+  color: var(--color-text-light);
+}
+
+.logo-container h2 {
+  font-size: 1.2rem;
+  color: var(--color-primary-orange);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Quita los puntos, alinea los elementos en horizontal y los centra */
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px; /* Espacio entre cada enlace */
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos opcionales para quitar el subrayado de los enlaces */
+.nav-link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.nav-link.active {
+  color: #ff6600; 
+  font-weight: bold;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-text-light);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Botones */
+.btn-orange {
+  background-color: var(--color-primary-orange);
+  color: var(--color-text-light);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-orange:hover {
+  background-color: #e0690e;
+}
+
+.btn-logout {
+  background-color: var(--color-secondary-red);
+  color: var(--color-text-light);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Auth Layout */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1rem;
+}
+
+.auth-card {
+  background: var(--color-surface);
+  padding: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.auth-card h3 {
+  margin-bottom: 1.5rem;
+  color: var(--color-primary-black);
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+.auth-card input:focus {
+  outline: 2px solid var(--color-primary-orange);
+}
+
+/* Layout Dashboard */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.metric-card {
+  background: var(--color-surface);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 5px solid var(--color-primary-orange);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.metric-card p {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary-black);
+}
+
+/* Tabla Horario */
+.table-container {
+  background: var(--color-surface);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-table th, .data-table td {
+  padding: 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.data-table th {
+  background-color: var(--color-primary-black);
+  color: var(--color-text-light);
+}
+
+/* Cards Asignaturas */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.course-card {
+  background: var(--color-surface);
+  padding: 1.2rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.course-card h4 {
+  margin-bottom: 0.5rem;
+}
+
+/* Panel Perfil */
+.profile-panel {
+  background: var(--color-surface);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  height: fit-content;
+}
+
+.profile-panel p {
+  margin-bottom: 1rem;
+}
+
+/* Modal UI */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  background: var(--color-surface);
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 550px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Responsivo */
+@media (max-width: 992px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: var(--color-primary-black);
+    width: 100%;
+    padding: 1.5rem;
+  }
+  .nav-menu.active {
+    display: flex;
+  }
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
