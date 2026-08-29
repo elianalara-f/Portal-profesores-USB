@@ -18,3 +18,7 @@ Proyecto web interactivo desarrollado para la gestión de horarios, asignaturas 
 ├── index.html        # Estructura semántica de la aplicación
 ├── styles.css        # Estilos, variables CSS, layout Flexbox/Grid y Responsive Design
 └── script.js        # Lógica de interacción (DOM, modal, validaciones)
+
+## Link para visualizar la página web
+
+https://elianalara-f.github.io/Portal-profesores-USB/ 
